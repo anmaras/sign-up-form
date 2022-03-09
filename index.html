@@ -5,6 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sign-In Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
   </head>
@@ -14,6 +22,7 @@
         <div class="background-section__img">
           <div class="background-section__logo-container">
             <div class="background-section__logo-container__img"></div>
+            <h2>Odin</h2>
           </div>
         </div>
       </section>
@@ -22,14 +31,14 @@
           <h2 class="form-section__title-container__text">
             This is not a real online service! You know you need something like
             this in your life to help you realize your deepest dreams. Sign up
-            <em>now</em>
+            <span>now</span>
             to get started
           </h2>
           <h2 class="form-section__title-container__text">
-            You <em>know</em> you want to.
+            You <span>know</span> you want to.
           </h2>
         </div>
-        <form action="/index.html" method="post">
+        <form class="form-section__inputs" action="/index.html" method="post">
           <label for="firstname">First Name</label>
           <input type="text" id="firstname" name="user_firstname" />
           <label for="lastname">Last Name</label>
