@@ -2,19 +2,33 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 0;
 }
 
-.background-section__img {
+.background-section {
+  /* display: inline-block; */
+  /* width: 30%; */
+  width: 100%;
+  height: 50vh;
+  background-color: cadetblue;
+}
+.form-section {
+  /* display: inline-block; */
+  /* width: 70%; */
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(218, 228, 202);
+}
+
+/* .background-section__img {
   background-image: url(./imgs/photo-1585202900225-6d3ac20a6962.avif);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 15rem;
-  width: 100%;
-}
+  height: 100vh;
+} */
 
-.background-section__logo-container {
-  /* position: relative; */
+/* .background-section__logo-container {
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   text-align: center;
@@ -22,7 +36,6 @@
 
 .background-section__logo-container__img {
   background-image: url(./imgs/odin-lined.png);
-  /* display: inline-block; */
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,38 +43,52 @@
 }
 
 .background-section__logo-container h2 {
-  /* display: inline-block; */
   font-family: "Norse", sans-serif;
   font-size: 1.5rem;
   color: white;
   font-size: 3rem;
-}
+} */
 
-.form-section {
-  height: 70rem;
-  padding: 1rem;
-  background-color: rgb(151, 252, 0);
-  /* width: auto; */
-}
-
-.form-section__title-container h2,
-.form-section__title-container h2 > em {
+/* .form-section__title-container h2 {
+  padding-top: 1rem;
   font-family: "Roboto", sans-serif;
   font-size: 1.3rem;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1;
   background-color: aqua;
+  text-align: left;
 }
 
-form {
-  background-color: blueviolet;
+.form-section__elements-inputs {
+  padding: 0.5rem;
+  background: red;
 }
-.form-section__inputs input,
-.form-section__inputs label,
-.form-section__inputs button,
-.form-section__inputs p {
+
+.form-section__elements input,
+.form-section__elements label,
+.form-section__elements button,
+.form-section__elements p {
   display: block;
-  margin-top: 1rem;
-  width: 50%;
-  margin: auto;
+  width: 100%;
+}
+.form-section__elements label {
+  /* margin-top: 1rem; 
+}
+.form-section__elements input {
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+.form-section__elements button {
+  width: 8rem;
+}*/
+@media (min-width: 40rem) {
+  .background-section {
+    display: inline-block;
+    width: 40%;
+    height: 100vh;
+  }
+  .form-section {
+    display: inline-block;
+    width: 60%;
+  }
 }
