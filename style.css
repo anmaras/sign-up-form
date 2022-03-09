@@ -1,4 +1,67 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+}
+
+.background-section__img {
+  background-image: url(./imgs/photo-1585202900225-6d3ac20a6962.avif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 15rem;
+  width: 100%;
+}
+
+.background-section__logo-container {
+  /* position: relative; */
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: center;
+}
+
+.background-section__logo-container__img {
+  background-image: url(./imgs/odin-lined.png);
+  /* display: inline-block; */
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 6rem;
+}
+
+.background-section__logo-container h2 {
+  /* display: inline-block; */
+  font-family: "Norse", sans-serif;
+  font-size: 1.5rem;
+  color: white;
+  font-size: 3rem;
+}
+
+.form-section {
+  height: 70rem;
+  padding: 1rem;
+  background-color: rgb(151, 252, 0);
+  /* width: auto; */
+}
+
+.form-section__title-container h2,
+.form-section__title-container h2 > em {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1;
+  background-color: aqua;
+}
+
+form {
+  background-color: blueviolet;
+}
+.form-section__inputs input,
+.form-section__inputs label,
+.form-section__inputs button,
+.form-section__inputs p {
+  display: block;
+  margin-top: 1rem;
+  width: 50%;
+  margin: auto;
 }
