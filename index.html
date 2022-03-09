@@ -22,7 +22,7 @@
         <div class="background-section__img">
           <div class="background-section__logo-container">
             <div class="background-section__logo-container__img"></div>
-            <h2>Odin</h2>
+            <h2>ODIN</h2>
           </div>
         </div>
       </section>
@@ -34,29 +34,33 @@
             <span>now</span>
             to get started
           </h2>
-          <h2 class="form-section__title-container__text">
+          <h2 class="form-section__title-container__text subtitle">
             You <span>know</span> you want to.
           </h2>
         </div>
-        <form class="form-section__inputs" action="/index.html" method="post">
-          <label for="firstname">First Name</label>
-          <input type="text" id="firstname" name="user_firstname" />
-          <label for="lastname">Last Name</label>
-          <input type="text" id="lastname" name="user_lastname" />
-          <label for="email">Email</label>
-          <input type="email" id="email" name="user_email" />
-          <label for="phone">Phone</label>
-          <input type="number" id="phone" name="user_phone" />
-          <label for="password">Password</label>
-          <input type="password" id="password" name="user_password" />
-          <label for="pswd-confirmation">Confirm Password</label>
-          <input
-            type="password"
-            id="pswd-confirmation"
-            name="user_pswd-confirmation"
-          />
-          <button type="submit">Create Account</button>
-          <p>Already have an account? <a href="#">Log in</a></p>
+        <form class="form-section__elements" action="/index.html" method="post">
+          <div class="form-section__elements-inputs">
+            <label for="firstname">First Name</label>
+            <input type="text" id="firstname" name="user_firstname" />
+            <label for="lastname">Last Name</label>
+            <input type="text" id="lastname" name="user_lastname" />
+            <label for="email">Email</label>
+            <input type="email" id="email" name="user_email" />
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="user_phone" />
+            <label for="password">Password</label>
+            <input type="password" id="password" name="user_password" />
+            <label for="pswd-confirmation">Confirm Password</label>
+            <input
+              type="password"
+              id="pswd-confirmation"
+              name="user_pswd-confirmation"
+            />
+          </div>
+          <div class="form-section__elements-inputs__button">
+            <button type="submit">Create Account</button>
+            <p>Already have an account? <a href="#">Log in</a></p>
+          </div>
         </form>
       </section>
     </main>
