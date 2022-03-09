@@ -1,5 +1,6 @@
 :root {
   --font-family: "Roboto", san-serif;
+  --font-family-alt: "Norse", san-serif;
 }
 * {
   box-sizing: border-box;
@@ -30,6 +31,7 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   background-color: rgba(0, 0, 0, 0.445);
   width: 100%;
 }
@@ -48,25 +51,26 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+
   width: 100%;
   height: 4rem;
 }
 
 .background-section__logo-container h2 {
-  font-family: "Norse", sans-serif;
+  font-family: var(--font-family-alt);
   color: white;
   font-size: 4rem;
 }
 
 .form-section__title-container {
-  font-family: "Norse", sans-serif;
-  font-size: 1.2rem;
+  font-family: var(--font-family-alt);
+  font-size: 1rem;
   text-align: justify;
   padding: 2rem 0.7rem;
 }
 
 .form-section__title-container__text:nth-child(2) {
-  font-family: "Norse", sans-serif;
+  font-family: var(--font-family-alt);
   padding-top: 2rem;
   text-align: center;
   text-decoration: underline;
@@ -83,7 +87,8 @@ body {
   margin-bottom: 1rem;
   font-size: 1.5rem;
   font-weight: 500;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.05rem;
+  color: rgb(61, 61, 61);
   font-family: var(--font-family);
 }
 
@@ -104,6 +109,8 @@ body {
 
 .form-section__elements-inputs label {
   color: rgb(116, 116, 116);
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
   font-weight: 500;
   margin-bottom: 0.1rem;
 }
@@ -111,12 +118,15 @@ body {
 .form-section__elements-inputs__button {
   position: absolute;
   margin-top: 3rem;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .form-section__elements-inputs__button button {
   font-family: var(--font-family);
+  min-width: 175px;
   max-width: 15rem;
-  padding: 0.8rem 1rem;
+  padding: 0.8rem 2rem;
   border: none;
   border-radius: 8px;
   background: rgb(81, 95, 29);
