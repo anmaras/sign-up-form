@@ -8,7 +8,9 @@ main {
   flex-direction: column;
 }
 .background-section {
+  position: relative;
   width: 100%;
+  min-width: 200px;
   height: 30vh;
 }
 .form-section {
@@ -18,45 +20,56 @@ main {
 }
 
 .background-section__img {
+  position: absolute;
   background-image: url(./imgs/photo-1585202900225-6d3ac20a6962.avif);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .background-section__logo-container {
-  position: relative;
-  background-color: black;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.445);
   width: 100%;
-  /* text-align: center; */
+  /* min-width: 100px; */
 }
 
 .background-section__logo-container__img {
+  /* display: inline-block; */
   background-image: url(./imgs/odin-lined.png);
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  height: 2rem;
+  width: 50%;
+  height: 6rem;
+  /* min-height: 3rem; */
 }
 
 .background-section__logo-container h2 {
   font-family: "Norse", sans-serif;
-  font-size: 1.5rem;
   color: white;
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
-/* .form-section__title-container h2 {
-  padding-top: 1rem;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 1;
-  background-color: aqua;
-  text-align: left;
+.form-section__title-container {
+  font-family: "Norse", sans-serif;
+  font-size: 1.2rem;
+  text-align: center;
 }
-
+.form-section__title-container__text:nth-child(2) {
+  font-family: "Norse", sans-serif;
+  padding-top: 2rem;
+}
+/*
 .form-section__elements-inputs {
   padding: 0.5rem;
   background: red;
