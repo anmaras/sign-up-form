@@ -106,13 +106,14 @@ main {
 }
 
 .form-section__elements input {
-  padding: 0.3rem;
+  padding: 0 0.3rem;
   border: 1px solid rgb(216, 216, 216);
   border-radius: 4px;
   margin-bottom: 1rem;
   letter-spacing: 0.05rem;
   font-size: 1rem;
   background: rgb(252, 252, 252);
+  height: 2.5rem;
 }
 
 .form-section__elements label {
@@ -160,15 +161,52 @@ button:focus-visible {
   color: rgb(81, 95, 29);
 }
 
-/* @media (min-width: 480px) {
-  body {
+@media (min-width: 40rem) {
+  main {
     display: flex;
     flex-direction: row;
   }
   .background-section {
-    flex: 1;
+    height: 100%;
+    width: 30%;
   }
   .form-section {
-    flex: 3;
+    padding: 0;
+    width: 70%;
+    height: 100%;
+    /* position: relative; */
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
   }
-} */
+
+  .form-section__elements {
+    display: flex;
+    flex-flow: row wrap;
+    /* height: %; */
+    width: 100%;
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 0.1rem;
+  }
+  .form-section__elements input,
+  .form-section__elements label {
+    width: 50%;
+  }
+
+  .form-section__title-container {
+    position: relative;
+    width: 70%;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    margin-left: 2rem;
+  }
+
+  .form-section > p {
+    text-align: left;
+    margin-left: 2rem;
+  }
+}
