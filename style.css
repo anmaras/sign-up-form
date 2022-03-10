@@ -1,31 +1,28 @@
 :root {
-  --font-family: "Roboto", san-serif;
-  --font-family-alt: "Norse", san-serif;
+  --font-family: "Roboto", san-serif, serif;
+  --font-family-italiana: "Italiana", san-serif, serif;
+  --font-size-form: calc(0.75rem + 1vmin);
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
+main {
   height: 100vh;
 }
 
 .background-section {
-  flex: 1 0 35%;
-  background-color: bisque;
+  height: 45%;
 }
 
 .form-section {
-  flex-basis: 100%;
+  height: 100%;
   background-color: rgb(248, 248, 248);
 }
 
 /*img background section */
-
 .background-section__img {
   background-image: url(./imgs/andrew-romanov-qlgll3u2FTk-unsplash.jpg);
   background-position: center;
@@ -33,20 +30,18 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
 }
 
 .background-section__logo-container {
+  position: sticky;
+  top: 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: flex-end;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.445);
   width: 100%;
-  /* height: 50%; */
-  /* min-width: 165px; */
-  /* min-height: 165px; */
+  background-color: rgba(0, 0, 0, 0.445);
+  padding: 0.2rem 1rem;
 }
 
 .background-section__logo-container__img {
@@ -54,125 +49,127 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 4rem;
+  width: 4rem;
+  height: 3rem;
 }
 
 .background-section__logo-container h2 {
-  font-family: var(--font-family-alt);
-  color: white;
-  font-size: 4rem;
+  color: aliceblue;
+  font-family: var(--font-family-italiana);
+  font-size: 2rem;
 }
 
-/*form section  title*/
+/* form section  title*/
 
-.form-section__title-container {
-  font-family: var(--font-family-alt);
-  font-size: 1rem;
+.form-section__title-container__text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: var(--font-size-form);
   text-align: justify;
-  padding: 2rem 0.7rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 1rem;
 }
 
-.form-section__title-container__text:nth-child(2) {
-  font-family: var(--font-family-alt);
-  padding-top: 2rem;
-  text-align: center;
+.form-section__title-container__text.subtitle {
+  font-family: var(--font-family);
+  text-align: left;
   text-decoration: underline;
 }
 
 /*form section  form container*/
 
 .form-section__elements {
-  position: relative;
-  width: 100%;
   background: white;
-  padding: 1rem 3rem;
+  padding: 1rem;
   box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.form-section__elements > p {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
+.form-section__elements:first-of-type p {
+  font-size: var(--font-size-form);
   font-weight: 500;
   letter-spacing: 0.05rem;
   color: rgb(61, 61, 61);
   font-family: var(--font-family);
+  margin-bottom: 1rem;
 }
 
-.form-section__elements-inputs input,
-.form-section__elements-inputs label {
+.form-section__elements input,
+.form-section__elements label {
   font-family: var(--font-family);
-  width: 100%;
 }
 
-.form-section__elements-inputs input:focus-visible {
+.form-section__elements input:focus-visible {
   outline: 1px solid rgb(85, 140, 185);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.form-section__elements-inputs input {
-  padding: 0.45rem;
+.form-section__elements input {
+  padding: 0.3rem;
   border: 1px solid rgb(216, 216, 216);
   border-radius: 4px;
-  font-size: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  letter-spacing: 0.05rem;
 }
 
-.form-section__elements-inputs label {
+.form-section__elements label {
   color: rgb(116, 116, 116);
   font-size: 0.7rem;
   letter-spacing: 0.1rem;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 0.1rem;
 }
 
 /*form section  form button*/
 
-.form-section__elements-inputs__button {
-  position: absolute;
-  margin-top: 3rem;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.form-section__elements-inputs__button button {
+.form-section__elements [type="submit"] {
+  align-self: center;
   font-family: var(--font-family);
-  min-width: 175px;
-  max-width: 15rem;
   padding: 0.8rem 2rem;
   border: none;
   border-radius: 8px;
   background: rgb(81, 95, 29);
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.3);
   color: whitesmoke;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   cursor: pointer;
 }
 
-.form-section__elements-inputs__button p {
-  font-family: var(--font-family);
-  font-size: 0.8rem;
-  margin-top: 1.5rem;
-  margin-bottom: 2rem;
+.form-section__elements [type="submit"]:hover {
+  color: white;
+  background: rgb(35, 35, 255);
 }
 
-.form-section__elements-inputs__button p > a {
+.form-section__elements [type="submit"]:focus-visible {
+  outline: 1px solid rgb(85, 140, 185);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-section > p {
+  text-align: center;
+  font-family: var(--font-family);
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.form-section p > a {
   font-family: var(--font-family);
   text-decoration: none;
   color: rgb(81, 95, 29);
 }
 
-@media (min-width: 40rem) {
+/* @media (min-width: 480px) {
   body {
     display: flex;
     flex-direction: row;
   }
   .background-section {
     flex: 1;
-    height: 100vh;
   }
   .form-section {
-    flex: 2;
+    flex: 3;
   }
-}
+} */
