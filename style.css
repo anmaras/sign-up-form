@@ -15,17 +15,19 @@ body {
 }
 
 .background-section {
-  flex: 1 0 25%;
+  flex: 1 0 35%;
   background-color: bisque;
 }
 
 .form-section {
-  flex: 1 100%;
+  flex-basis: 100%;
   background-color: rgb(248, 248, 248);
 }
 
+/*img background section */
+
 .background-section__img {
-  background-image: url(./imgs/photo-1585202900225-6d3ac20a6962.avif);
+  background-image: url(./imgs/andrew-romanov-qlgll3u2FTk-unsplash.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -33,7 +35,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .background-section__logo-container {
@@ -42,6 +44,9 @@ body {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.445);
   width: 100%;
+  /* height: 50%; */
+  /* min-width: 165px; */
+  /* min-height: 165px; */
 }
 
 .background-section__logo-container__img {
