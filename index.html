@@ -30,7 +30,12 @@
             You <span>know</span> you want to.
           </h2>
         </div>
-        <form class="form-section__elements" action="/index.html" method="post">
+        <form
+          class="form-section__elements"
+          action="/index.html"
+          method="post"
+          autocomplete="off"
+        >
           <p>Let's do this!</p>
           <div class="form-section__elements-entries">
             <div class="form-section__elements-entry">
@@ -55,7 +60,12 @@
             </div>
             <div class="form-section__elements-entry">
               <label for="password">PASSWORD*</label>
-              <input type="password" id="password" name="user_password" />
+              <input
+                type="password"
+                id="password"
+                name="user_password"
+                autocomplete="new-password"
+              />
               <p>*Password do not match</p>
             </div>
             <div class="form-section__elements-entry">

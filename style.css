@@ -100,7 +100,7 @@ main {
   font-size: 0.9rem;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
-  visibility: hidden;
+  /* visibility: hidden; */
 }
 
 /* .form-section__elements-entries :nth-child(1) p {
