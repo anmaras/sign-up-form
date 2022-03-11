@@ -168,6 +168,8 @@ button:focus-visible {
   color: rgb(81, 95, 29);
 }
 
+/*media querries */
+
 @media (min-width: 40rem) {
   main {
     display: flex;
@@ -181,23 +183,27 @@ button:focus-visible {
     padding: 0;
     width: 70%;
     height: 100%;
-    /* position: relative; */
-    align-items: flex-start;
     justify-content: center;
     gap: 2rem;
   }
 
-  .form-section__elements {
+  .form-section__elements-entries {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-section__elements-entry {
     display: flex;
     flex-flow: column;
-    /* height: %; */
-    width: 70%;
-    /* justify-content: center; */
-    /* align-items: center; */
   }
+
+  .form-section__elements {
+    width: 100%;
+  }
+
   .form-section__elements input,
   .form-section__elements label {
-    width: 50%;
+    width: 40%;
   }
 
   .form-section__title-container {
