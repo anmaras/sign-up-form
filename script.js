@@ -12,16 +12,32 @@ userName.addEventListener("input", () => {
     userName.nextElementSibling.style.visibility = "hidden";
   }
 });
+
 userLastName.addEventListener("input", () => {
   if (userLastName.validity.valid) {
     userLastName.classList.remove("error");
     userLastName.nextElementSibling.style.visibility = "hidden";
   }
 });
+
 email.addEventListener("input", () => {
   if (email.validity.valid) {
     email.classList.remove("error");
     email.nextElementSibling.style.visibility = "hidden";
+  }
+});
+
+phone.addEventListener("input", () => {
+  if (phone.validity.valid) {
+    phone.classList.remove("error");
+    phone.nextElementSibling.style.visibility = "hidden";
+  }
+});
+
+password.addEventListener("input", () => {
+  if (password.validity.valid) {
+    password.classList.remove("error");
+    password.nextElementSibling.style.visibility = "hidden";
   }
 });
 
@@ -47,6 +63,12 @@ form.addEventListener("submit", (e) => {
   if (!phone.validity.valid) {
     phone.classList.add("error");
     phone.nextElementSibling.style.visibility = "visible";
+    showErrorPhone();
+    e.preventDefault();
+  }
+  if (!password.validity.valid) {
+    password.classList.add("error");
+    password.nextElementSibling.style.visibility = "visible";
     showErrorPhone();
     e.preventDefault();
   }
@@ -85,6 +107,17 @@ function showErrorEmail() {
   }
 }
 function showErrorPhone() {
+  if (phone.validity.valueMissing) {
+    phone.nextElementSibling.textContent =
+      "You need to enter your phone number.";
+  } else if (phone.validity.patternMismatch) {
+    phone.nextElementSibling.textContent =
+      "*Entered characters needs to be numbers'";
+  } else if (phone.validity.tooShort) {
+    phone.nextElementSibling.textContent = "Phone number too short";
+  }
+}
+function showErrorPassword() {
   if (phone.validity.valueMissing) {
     phone.nextElementSibling.textContent =
       "You need to enter your phone number.";
