@@ -100,7 +100,7 @@ main {
   font-size: 0.9rem;
   margin-top: 0.2rem;
   margin-bottom: 0.5rem;
-  /* visibility: hidden; */
+  visibility: hidden;
 }
 
 /* .form-section__elements-entries :nth-child(1) p {
@@ -130,6 +130,15 @@ main {
 
 .form-section__elements input:hover {
   outline: 1px solid rgb(238, 84, 23);
+}
+
+.form-section__elements input.error {
+  outline: 2px solid rgb(238, 23, 23);
+  background-color: rgba(248, 231, 231, 0.068);
+  transition: 0.1s;
+}
+.form-section__elements input:valid {
+  outline: 2px solid rgb(25, 168, 12);
 }
 
 .form-section__elements label {
