@@ -5,21 +5,22 @@ const warnings = document.querySelectorAll("input + p");
 warnings.forEach((warning) => (warning.style.visibility = "hidden"));
 
 inputs.forEach((input) => {
-  input.addEventListener("focus", (e) => visible(e.target.id));
+  input.addEventListener("focus", () => {
+    visible(input.id);
+  });
 });
 
 inputs.forEach((input) => {
-  input.addEventListener("blur", (e) => hidden(e.target.id));
+  input.addEventListener("blur", () => hidden(input.id));
 });
 
 inputs.forEach((input) => {
-  input.addEventListener("input", (e) =>
-    validation(e.target.value, e.target.id)
-  );
+  input.addEventListener("input", () => validation(input.value, input.id));
 });
+
+// functions
 
 function visible(value) {
-  console.log();
   document.querySelector(`#${value} + p`).style.visibility = "visible";
 }
 
@@ -27,12 +28,16 @@ function hidden(value) {
   document.querySelector(`#${value} + p`).style.visibility = "hidden";
 }
 
-function validation(input, value) {
-  const numbers = /[0-9]/g;
-  let test = value;
-  if (input.match(numbers)) {
-    for (let i = 0; i < warnings.length; i++) {
-      warnings[i].textContent = "Name cant be a number";
-    }
-  } else warnings[i].textContent = "Please enter a valid name";
+function validation(value, id) {
+  console.log(typeof value);
+  let numbers = /[0-9]/g;
+  if (value === "") {
+    document.querySelector(`#${id} + p`).textContent =
+      "*Please enter a valid name";
+  }
+
+  if (value.match(numbers)) {
+    return (document.querySelector(`#${id} + p`).textContent =
+      "*Name should contain letters only");
+  }
 }
