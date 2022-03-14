@@ -35,38 +35,65 @@
           action="/index.html"
           method="post"
           autocomplete="off"
+          novalidate
         >
           <p>Let's do this!</p>
           <div class="form-section__elements-entries">
             <div class="form-section__elements-entry">
               <label for="firstname">FIRST NAME*</label>
-              <input type="text" id="firstname" name="user_firstname" />
-              <p>*Please enter a valid name</p>
+              <input
+                type="text"
+                id="firstname"
+                name="user_firstname"
+                required
+                pattern="[A-Za-z ]+"
+                minlength="3"
+                maxlength="25"
+                title="Please enter your first name that only contain letters "
+              />
+              <p>*Please enter your first name</p>
             </div>
             <div class="form-section__elements-entry">
               <label for="lastname">LAST NAME*</label>
-              <input type="text" id="lastname" name="user_lastname" />
-              <p>*Please enter a valid name</p>
+              <input
+                type="text"
+                id="lastname"
+                name="user_lastname"
+                required
+                pattern="[A-Za-z ]+"
+                minlength="4"
+                maxlength="25"
+              />
+              <p>*Please enter your last name</p>
             </div>
             <div class="form-section__elements-entry">
               <label for="email">EMAIL*</label>
-              <input type="email" id="email" name="user_email" />
-              <p>*Please enter a valid email</p>
+              <input type="email" id="email" name="user_email" required />
+              <p>*Please enter your email</p>
             </div>
             <div class="form-section__elements-entry">
               <label for="phone">PHONE NUMBER</label>
-              <input type="tel" id="phone" name="user_phone" />
-              <p>*Please enter a valid phone number</p>
+              <input
+                type="tel"
+                id="phone"
+                name="user_phone"
+                required
+                minlength="10"
+                maxlength="30"
+                pattern="[0-9]+"
+                placeholder="210-########"
+              />
+              <p>*Please enter your phone number</p>
             </div>
-            <div class="form-section__elements-entry">
+            <div class="form-section__elements-entry" required>
               <label for="password">PASSWORD*</label>
               <input
                 type="password"
                 id="password"
                 name="user_password"
-                autocomplete="new-password"
+                required
               />
-              <p>*Password do not match</p>
+              <p>*Please enter your password</p>
             </div>
             <div class="form-section__elements-entry">
               <label for="pswd-confirm">CONFIRM PASSWORD*</label>
@@ -74,12 +101,13 @@
                 type="password"
                 id="pswd-confirm"
                 name="user_pswd-confirm"
+                required
               />
               <p>*Password do not match</p>
             </div>
           </div>
+          <button type="submit">Create Account</button>
         </form>
-        <button type="submit" disabled>Create Account</button>
         <p>Already have an account? <a href="#">Log in</a></p>
       </section>
     </main>
