@@ -4,8 +4,11 @@ const userLastName = document.getElementById("lastname");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const password = document.getElementById("password");
-const passwordConfirmation = document.getElementById("pswd-confirm");
-const passwordIcon = document.querySelector(".material-icons-outlined");
+const confirmationPasswordInput = document.getElementById("pswd-confirm");
+const userPasswordIcon = document.querySelector(".material-icons-outlined");
+const confirmationPasswordIcon = document.querySelector(
+  ".material-icons-outlined.confirm"
+);
 
 /* Input Event Listeners */
 
@@ -77,21 +80,41 @@ form.addEventListener("submit", (e) => {
     showErrorPassword();
     e.preventDefault();
   }
+  if (confirmationPasswordInput.value !== password.value) {
+    confirmationPasswordInput.classList.add("error");
+    confirmationPasswordInput.nextElementSibling.style.visibility = "visible";
+    showConfirmationError();
+    e.preventDefault();
+  }
 });
 
 /*Password Event Listener */
 
-passwordIcon.addEventListener("click", passwordVisibility);
+userPasswordIcon.addEventListener("click", passwordVisibility);
+confirmationPasswordIcon.addEventListener(
+  "click",
+  confirmationPasswordInputVisibility
+);
 
 /* Password visibility function */
 
 function passwordVisibility() {
-  if (passwordIcon.textContent.trim() === "visibility_off") {
-    passwordIcon.textContent = "visibility";
+  if (userPasswordIcon.textContent.trim() === "visibility_off") {
+    userPasswordIcon.textContent = "visibility";
     password.type = "text";
   } else {
-    passwordIcon.textContent = "visibility_off";
+    userPasswordIcon.textContent = "visibility_off";
     password.type = "password";
+  }
+}
+
+function confirmationPasswordInputVisibility() {
+  if (confirmationPasswordIcon.textContent.trim() === "visibility_off") {
+    confirmationPasswordIcon.textContent = "visibility";
+    confirmationPasswordInput.type = "text";
+  } else {
+    confirmationPasswordIcon.textContent = "visibility_off";
+    confirmationPasswordInput.type = "password";
   }
 }
 
@@ -158,6 +181,17 @@ function showErrorPassword() {
     password.nextElementSibling.textContent =
       "*Password must contain at least one number.";
   } else if (password.validity.tooShort) {
-    password.nextElementSibling.textContent = "*Password is too short";
+    password.nextElementSibling.textContent =
+      "*Password need to be at least 8 characters";
+  }
+}
+
+function showConfirmationError() {
+  if (confirmationPasswordInput.value !== "" && password.value === "") {
+    confirmationPasswordInput.nextElementSibling.textContent =
+      "*You have not entered any password yet!";
+  } else if (confirmationPasswordInput.value !== password.value) {
+    confirmationPasswordInput.nextElementSibling.textContent =
+      "*Password does not match";
   }
 }

@@ -137,7 +137,7 @@ main {
   background-color: rgba(248, 231, 231, 0.068);
   transition: 0.1s;
 }
-.form-section__elements input:valid {
+.form-section__elements input:valid:not(#pswd-confirm) {
   outline: 2px solid rgb(25, 168, 12);
 }
 
