@@ -156,7 +156,7 @@ main {
 .material-icons-outlined {
   position: absolute;
   font-size: 1.3rem;
-  color: gray;
+  color: rgb(99, 98, 98);
   right: 2%;
   top: 32%;
   cursor: pointer;
