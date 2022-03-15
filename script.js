@@ -6,7 +6,6 @@ const phone = document.getElementById("phone");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("pswd-confirm");
 const passwordIcon = document.querySelector(".material-icons-outlined");
-console.log(password.type);
 
 /* Input Event Listeners */
 
@@ -75,10 +74,11 @@ form.addEventListener("submit", (e) => {
   if (!password.validity.valid) {
     password.classList.add("error");
     password.nextElementSibling.style.visibility = "visible";
-    showErrorPhone();
+    showErrorPassword();
     e.preventDefault();
   }
 });
+
 /*Password Event Listener */
 
 passwordIcon.addEventListener("click", passwordVisibility);
@@ -129,6 +129,7 @@ function showErrorEmail() {
       "*Entered value needs to be an e-mail address.'";
   }
 }
+
 function showErrorPhone() {
   if (phone.validity.valueMissing) {
     phone.nextElementSibling.textContent =
@@ -140,14 +141,23 @@ function showErrorPhone() {
     phone.nextElementSibling.textContent = "Phone number too short";
   }
 }
+
 function showErrorPassword() {
-  if (phone.validity.valueMissing) {
-    phone.nextElementSibling.textContent =
-      "You need to enter your phone number.";
-  } else if (phone.validity.patternMismatch) {
-    phone.nextElementSibling.textContent =
-      "*Entered characters needs to be numbers'";
-  } else if (phone.validity.tooShort) {
-    phone.nextElementSibling.textContent = "Phone number too short";
+  const lowerCaseLetters = /[a-z]/g;
+  const upperCaseLetters = /[A-Z]/g;
+  const numbers = /[0-9]/g;
+  if (password.validity.valueMissing) {
+    password.nextElementSibling.textContent = "*You need to enter a password.";
+  } else if (!password.value.match(lowerCaseLetters)) {
+    password.nextElementSibling.textContent =
+      "*Password must contain at least one lowercase letter.";
+  } else if (!password.value.match(upperCaseLetters)) {
+    password.nextElementSibling.textContent =
+      "*Password must contain at least one uppercase letter.";
+  } else if (!password.value.match(numbers)) {
+    password.nextElementSibling.textContent =
+      "*Password must contain at least one number.";
+  } else if (password.validity.tooShort) {
+    password.nextElementSibling.textContent = "*Password is too short";
   }
 }
