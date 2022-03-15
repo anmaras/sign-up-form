@@ -149,6 +149,19 @@ main {
   margin-bottom: 0.2rem;
 }
 
+.form-section__elements-entry.icon {
+  position: relative;
+}
+
+.material-icons-outlined {
+  position: absolute;
+  font-size: 1.3rem;
+  color: gray;
+  right: 2%;
+  top: 32%;
+  cursor: pointer;
+}
+
 /*form section  form button*/
 
 button {

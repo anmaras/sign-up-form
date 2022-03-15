@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sign-In Form</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
   </head>
@@ -84,7 +89,7 @@
               />
               <p>*Please enter your phone number</p>
             </div>
-            <div class="form-section__elements-entry" required>
+            <div class="form-section__elements-entry icon" required>
               <label for="password">PASSWORD*</label>
               <input
                 type="password"
@@ -93,8 +98,9 @@
                 required
               />
               <p>*Please enter your password</p>
+              <span class="material-icons-outlined"> visibility_off </span>
             </div>
-            <div class="form-section__elements-entry">
+            <div class="form-section__elements-entry icon">
               <label for="pswd-confirm">CONFIRM PASSWORD*</label>
               <input
                 type="password"
@@ -103,6 +109,7 @@
                 required
               />
               <p>*Password do not match</p>
+              <span class="material-icons-outlined"> visibility_off </span>
             </div>
           </div>
           <button type="submit">Create Account</button>
