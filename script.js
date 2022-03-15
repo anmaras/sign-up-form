@@ -5,6 +5,10 @@ const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const password = document.getElementById("password");
 const passwordConfirmation = document.getElementById("pswd-confirm");
+const passwordIcon = document.querySelector(".material-icons-outlined");
+console.log(password.type);
+
+/* Input Event Listeners */
 
 userName.addEventListener("input", () => {
   if (userName.validity.valid) {
@@ -41,6 +45,8 @@ password.addEventListener("input", () => {
   }
 });
 
+/* Form Event Listener */
+
 form.addEventListener("submit", (e) => {
   if (!userName.validity.valid) {
     userName.classList.add("error");
@@ -73,6 +79,23 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
   }
 });
+/*Password Event Listener */
+
+passwordIcon.addEventListener("click", passwordVisibility);
+
+/* Password visibility function */
+
+function passwordVisibility() {
+  if (passwordIcon.textContent.trim() === "visibility_off") {
+    passwordIcon.textContent = "visibility";
+    password.type = "text";
+  } else {
+    passwordIcon.textContent = "visibility_off";
+    password.type = "password";
+  }
+}
+
+/*Error Functions */
 
 function showErrorName() {
   if (userName.validity.valueMissing) {
