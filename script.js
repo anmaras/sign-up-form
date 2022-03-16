@@ -13,6 +13,8 @@ const confirmationPasswordIcon = document.querySelector(
 /* Input Event Listeners */
 
 userName.addEventListener("input", () => {
+  userName.value = firstLetterToUpperCase(userName.value); // turn the first letter to upperCase
+  inputUserNameError();
   if (userName.validity.valid) {
     userName.classList.remove("error");
     userName.nextElementSibling.style.visibility = "hidden";
@@ -119,6 +121,17 @@ function confirmationPasswordInputVisibility() {
 }
 
 /*Error Functions */
+
+function inputUserNameError() {
+  if (userName.value.match(/[0-9]/g) || userName.value.length < 2) {
+    userName.nextElementSibling.style.visibility = "visible";
+    showErrorName();
+  }
+}
+
+function firstLetterToUpperCase(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 function showErrorName() {
   if (userName.validity.valueMissing) {
