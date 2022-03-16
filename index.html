@@ -5,123 +5,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sign-In Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="/style.css" />
     <script src="/script.js" defer></script>
   </head>
   <body>
-    <main>
-      <section class="background-section">
-        <div class="background-section__img">
-          <div class="background-section__logo-container">
-            <div class="background-section__logo-container__img"></div>
-            <h2>ODIN</h2>
+    <section class="background-section">
+      <div class="background-section__img">
+        <div class="background-section__logo-container">
+          <div class="background-section__logo-container__img"></div>
+          <!-- <p>ODIN</p> -->
+        </div>
+      </div>
+    </section>
+    <section class="form-section">
+      <div class="form-section__title-container">
+        <p class="form-section__title-container__text">
+          This is not a real online service! You know you need something like
+          this in your life to help you realize your deepest dreams. Sign up now
+          to get started
+        </p>
+        <p class="form-section__title-container__text subtitle">
+          You know you want to.
+        </p>
+      </div>
+      <form
+        class="form-section__elements"
+        action="/index.html"
+        method="post"
+        autocomplete="off"
+        novalidate
+      >
+        <p>Let's do this!</p>
+        <div class="form-section__elements-entries">
+          <div class="form-section__elements-entry">
+            <label for="firstname">FIRST NAME*</label>
+            <input
+              type="text"
+              id="firstname"
+              name="user_firstname"
+              required
+              pattern="[A-Za-z ]+"
+              minlength="2"
+              maxlength="25"
+              title="Please enter your first name that only contain letters "
+            />
+            <p>*Please enter your first name</p>
+          </div>
+          <div class="form-section__elements-entry">
+            <label for="lastname">LAST NAME*</label>
+            <input
+              type="text"
+              id="lastname"
+              name="user_lastname"
+              required
+              pattern="[A-Za-z ]+"
+              minlength="4"
+              maxlength="25"
+            />
+            <p>*Please enter your last name</p>
+          </div>
+          <div class="form-section__elements-entry">
+            <label for="email">EMAIL*</label>
+            <input type="email" id="email" name="user_email" required />
+            <p>*Please enter your email</p>
+          </div>
+          <div class="form-section__elements-entry">
+            <label for="phone">PHONE NUMBER*</label>
+            <input
+              type="tel"
+              id="phone"
+              name="user_phone"
+              required
+              minlength="10"
+              maxlength="30"
+              pattern="[0-9]+"
+            />
+            <p>*Please enter your phone number</p>
+          </div>
+          <div class="form-section__elements-entry icon" required>
+            <label for="password">PASSWORD*</label>
+            <input
+              type="password"
+              id="password"
+              name="user_password"
+              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+              minlength="8"
+              maxlength="55"
+              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+              required
+            />
+            <p>*Please enter your password</p>
+            <span class="material-icons-outlined"> visibility_off </span>
+          </div>
+          <div class="form-section__elements-entry icon">
+            <label for="pswd-confirm">CONFIRM PASSWORD*</label>
+            <input
+              type="password"
+              id="pswd-confirm"
+              name="user_pswd-confirm"
+              required
+            />
+            <p>*Password do not match</p>
+            <span class="material-icons-outlined confirm">visibility_off</span>
           </div>
         </div>
-      </section>
-      <section class="form-section">
-        <div class="form-section__title-container">
-          <h2 class="form-section__title-container__text">
-            This is not a real online service! You know you need something like
-            this in your life to help you realize your deepest dreams. Sign up
-            <span>now</span>
-            to get started
-          </h2>
-          <h2 class="form-section__title-container__text subtitle">
-            You <span>know</span> you want to.
-          </h2>
-        </div>
-        <form
-          class="form-section__elements"
-          action="/index.html"
-          method="post"
-          autocomplete="off"
-          novalidate
-        >
-          <p>Let's do this!</p>
-          <div class="form-section__elements-entries">
-            <div class="form-section__elements-entry">
-              <label for="firstname">FIRST NAME*</label>
-              <input
-                type="text"
-                id="firstname"
-                name="user_firstname"
-                required
-                pattern="[A-Za-z ]+"
-                minlength="3"
-                maxlength="25"
-                title="Please enter your first name that only contain letters "
-              />
-              <p>*Please enter your first name</p>
-            </div>
-            <div class="form-section__elements-entry">
-              <label for="lastname">LAST NAME*</label>
-              <input
-                type="text"
-                id="lastname"
-                name="user_lastname"
-                required
-                pattern="[A-Za-z ]+"
-                minlength="4"
-                maxlength="25"
-              />
-              <p>*Please enter your last name</p>
-            </div>
-            <div class="form-section__elements-entry">
-              <label for="email">EMAIL*</label>
-              <input type="email" id="email" name="user_email" required />
-              <p>*Please enter your email</p>
-            </div>
-            <div class="form-section__elements-entry">
-              <label for="phone">PHONE NUMBER</label>
-              <input
-                type="tel"
-                id="phone"
-                name="user_phone"
-                required
-                minlength="10"
-                maxlength="30"
-                pattern="[0-9]+"
-              />
-              <p>*Please enter your phone number</p>
-            </div>
-            <div class="form-section__elements-entry icon" required>
-              <label for="password">PASSWORD*</label>
-              <input
-                type="password"
-                id="password"
-                name="user_password"
-                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                minlength="8"
-                maxlength="55"
-                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
-                required
-              />
-              <p>*Please enter your password</p>
-              <span class="material-icons-outlined"> visibility_off </span>
-            </div>
-            <div class="form-section__elements-entry icon">
-              <label for="pswd-confirm">CONFIRM PASSWORD*</label>
-              <input
-                type="password"
-                id="pswd-confirm"
-                name="user_pswd-confirm"
-                required
-              />
-              <p>*Password do not match</p>
-              <span class="material-icons-outlined confirm"
-                >visibility_off</span
-              >
-            </div>
-          </div>
-          <button type="submit">Create Account</button>
-        </form>
-        <p>Already have an account? <a href="#">Log in</a></p>
-      </section>
-    </main>
+        <button type="submit">Create Account</button>
+      </form>
+      <p>Already have an account? <a href="#">Log in</a></p>
+    </section>
   </body>
 </html>
