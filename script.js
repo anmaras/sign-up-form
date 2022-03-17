@@ -36,6 +36,7 @@ email.addEventListener("input", () => {
     email.classList.remove("error");
     email.nextElementSibling.style.visibility = "hidden";
   }
+  inputEmailError();
 });
 
 phone.addEventListener("input", () => {
@@ -136,6 +137,9 @@ function inputUserNameError() {
     userName.nextElementSibling.style.visibility = "visible";
     showErrorName();
   }
+  if (!userName.value) {
+    userName.nextElementSibling.style.visibility = "hidden";
+  }
 }
 
 function inputUserLastNameError() {
@@ -144,16 +148,19 @@ function inputUserLastNameError() {
     showErrorLastName();
     userLastName.nextElementSibling.style.visibility = "visible";
   }
-}
-
-function inputEmailError() {
-  if (email.value.match(/[0-9]/g)) {
-    showErrorEmail();
-    email.nextElementSibling.style.visibility = "visible";
+  if (!userLastName.value) {
+    userLastName.nextElementSibling.style.visibility = "hidden";
   }
 }
 
-/*Input Check Functions */
+function inputEmailError() {
+  if (email.value) {
+    email.nextElementSibling.style.visibility = "visible";
+    email.nextElementSibling.textContent = "*example@domain.com";
+  } else email.nextElementSibling.style.visibility = "hidden";
+}
+
+/*Input Capital Letter Function */
 
 function firstLetterToUpperCase(string) {
   if (string.indexOf(" ") >= 0) {
