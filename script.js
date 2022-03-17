@@ -10,7 +10,7 @@ const confirmationPasswordIcon = document.querySelector(
   ".material-icons-outlined.confirm"
 );
 
-/* Input Event Listeners */
+/* Inputs Event Listeners */
 
 userName.addEventListener("input", () => {
   if (userName.validity.valid) {
@@ -49,7 +49,7 @@ password.addEventListener("input", () => {
   }
 });
 
-/* Form Event Listener */
+/* Form Event Listener Validation*/
 
 form.addEventListener("submit", (e) => {
   if (!userName.validity.valid) {
@@ -92,7 +92,10 @@ form.addEventListener("submit", (e) => {
 
 /*Password Event Listener */
 
+//password
 userPasswordIcon.addEventListener("click", passwordVisibility);
+
+//password confirmation
 confirmationPasswordIcon.addEventListener(
   "click",
   confirmationPasswordInputVisibility
@@ -101,6 +104,7 @@ confirmationPasswordIcon.addEventListener(
 /* Password visibility function */
 
 function passwordVisibility() {
+  //toggle the visibility icon for password input
   if (userPasswordIcon.textContent.trim() === "visibility_off") {
     userPasswordIcon.textContent = "visibility";
     password.type = "text";
@@ -111,6 +115,7 @@ function passwordVisibility() {
 }
 
 function confirmationPasswordInputVisibility() {
+  //toggle the visibility icon for confirmation input
   if (confirmationPasswordIcon.textContent.trim() === "visibility_off") {
     confirmationPasswordIcon.textContent = "visibility";
     confirmationPasswordInput.type = "text";
@@ -123,11 +128,15 @@ function confirmationPasswordInputVisibility() {
 /* Input Error Functions */
 
 function inputUserNameError() {
+  //
   if (userName.value.match(/[0-9]/g) || userName.value.length < 2) {
+    // if input is number or less than 2 chars
     userName.nextElementSibling.style.visibility = "visible";
     showErrorName();
   }
 }
+
+/*Input Check Functions */
 
 function firstLetterToUpperCase(string) {
   if (string.indexOf(" ") >= 0) {
