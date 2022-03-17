@@ -9,23 +9,26 @@ const userPasswordIcon = document.querySelector(".material-icons-outlined");
 const confirmationPasswordIcon = document.querySelector(
   ".material-icons-outlined.confirm"
 );
+console.log(userLastName);
 
 /* Inputs Event Listeners */
 
 userName.addEventListener("input", () => {
   if (userName.validity.valid) {
+    userName.value = firstLetterToUpperCase(userName.value); // turn the first letter to upperCase
     userName.classList.remove("error");
     userName.nextElementSibling.style.visibility = "hidden";
   }
   inputUserNameError();
-  userName.value = firstLetterToUpperCase(userName.value); // turn the first letter to upperCase
 });
 
 userLastName.addEventListener("input", () => {
   if (userLastName.validity.valid) {
+    userLastName.value = firstLetterToUpperCase(userLastName.value);
     userLastName.classList.remove("error");
     userLastName.nextElementSibling.style.visibility = "hidden";
   }
+  inputUserLastNameError();
 });
 
 email.addEventListener("input", () => {
@@ -128,11 +131,25 @@ function confirmationPasswordInputVisibility() {
 /* Input Error Functions */
 
 function inputUserNameError() {
-  //
   if (userName.value.match(/[0-9]/g) || userName.value.length < 2) {
     // if input is number or less than 2 chars
     userName.nextElementSibling.style.visibility = "visible";
     showErrorName();
+  }
+}
+
+function inputUserLastNameError() {
+  if (userLastName.value.match(/[0-9]/g) || userLastName.value.length < 4) {
+    // if input is number or less than 4 chars
+    showErrorLastName();
+    userLastName.nextElementSibling.style.visibility = "visible";
+  }
+}
+
+function inputEmailError() {
+  if (email.value.match(/[0-9]/g)) {
+    showErrorEmail();
+    email.nextElementSibling.style.visibility = "visible";
   }
 }
 
@@ -177,10 +194,10 @@ function showErrorLastName() {
 function showErrorEmail() {
   if (email.validity.valueMissing) {
     email.nextElementSibling.textContent =
-      "You need to enter an e-mail address.";
+      "You need to enter a valid e-mail address.";
   } else if (email.validity.typeMismatch) {
     email.nextElementSibling.textContent =
-      "*Entered value needs to be an e-mail address.'";
+      "*Entered value needs to be a valid e-mail address.'";
   }
 }
 
