@@ -13,12 +13,12 @@ const confirmationPasswordIcon = document.querySelector(
 /* Input Event Listeners */
 
 userName.addEventListener("input", () => {
-  userName.value = firstLetterToUpperCase(userName.value); // turn the first letter to upperCase
-  inputUserNameError();
   if (userName.validity.valid) {
     userName.classList.remove("error");
     userName.nextElementSibling.style.visibility = "hidden";
   }
+  inputUserNameError();
+  userName.value = firstLetterToUpperCase(userName.value); // turn the first letter to upperCase
 });
 
 userLastName.addEventListener("input", () => {
@@ -120,7 +120,7 @@ function confirmationPasswordInputVisibility() {
   }
 }
 
-/*Error Functions */
+/* Input Error Functions */
 
 function inputUserNameError() {
   if (userName.value.match(/[0-9]/g) || userName.value.length < 2) {
@@ -130,8 +130,17 @@ function inputUserNameError() {
 }
 
 function firstLetterToUpperCase(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
+  if (string.indexOf(" ") >= 0) {
+    //check if there is space between characters.
+    return string
+      .split(" ")
+      .map((text) => text.charAt(0).toUpperCase() + text.slice(1))
+      .join(" ");
+    // turns the first letter after space to upperCase
+  } else return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+/*Validation Error Functions */
 
 function showErrorName() {
   if (userName.validity.valueMissing) {
@@ -141,7 +150,7 @@ function showErrorName() {
       "*Your name should only contain alphabetical characters";
   } else if (userName.validity.tooShort)
     userName.nextElementSibling.textContent =
-      "*Your name should contain min 3 and max 25 characters!";
+      "*Your name should contain min 2 and max 25 characters!";
 }
 
 function showErrorLastName() {
