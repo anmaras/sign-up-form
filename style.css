@@ -28,25 +28,23 @@ html {
   font-family: var(--ff-primary);
   color: var(--clr-text);
   font-size: 16px;
+  background-color: var(--bg-clr-primary);
 }
 
 body {
   height: 100vh;
   width: 100vw;
   display: grid;
+  row-gap: 1rem;
   grid-template-rows: 40% auto;
   grid-template-columns: 1fr;
 }
 
-.background-section {
-  background-color: var(--bg-clr-primary);
-}
-
 .form-section {
-  position: relative;
   display: grid;
-  grid-template-rows: repeat(3, min-content);
-  background-color: var(--bg-clr-primary);
+  row-gap: 1rem;
+  align-items: center;
+  grid-template-rows: repeat(4, min-content);
 }
 
 /*img background section */
@@ -80,16 +78,18 @@ body {
 
 .form-section__title-container__text,
 .form-section__title-container__text.subtitle {
+  text-align: left;
   font-size: 1.125rem;
   font-weight: normal;
-  text-align: justify;
 }
 .form-section__title-container__text {
-  margin: 1rem;
+  margin-inline: 1rem;
 }
 
 .form-section__title-container__text.subtitle {
+  margin-top: 0.5rem;
   text-align: center;
+  text-decoration: underline;
 }
 
 /*form section  form container*/
@@ -102,12 +102,14 @@ form > p {
 }
 
 .form-section__elements {
-  padding: 1rem;
+  padding: 0.5rem;
   background-color: var(--bg-clr-secondary);
   box-shadow: 4px 8px 10px rgba(0, 0, 0, 0.1);
 }
-
-.form-section__elements-entries p {
+.form-section__elements-entry {
+  font-size: 1rem;
+}
+.form-section__elements-entry > p {
   color: var(--clr-warning-text);
   font-size: 0.85rem;
   font-weight: normal;
@@ -166,13 +168,15 @@ form > p {
 }
 
 /*form section  form button*/
+#submit-button {
+  display: none;
+}
 
-button {
-  position: relative;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, 0);
-  padding: 0.8rem 2.5rem;
+#button {
+  place-self: center;
+  max-width: max-content;
+  /* margin-top: 1.5rem; */
+  padding: 1rem 2rem;
   font-size: 1rem;
   font-family: var(--ff-primary);
   font-weight: 500;
@@ -184,18 +188,19 @@ button {
   cursor: pointer;
 }
 
-button:focus-visible {
+#button:focus-visible {
   outline: 2px solid var(--inpt-outline-focus);
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
+#button:hover {
   background-color: var(--clr-button-hover);
 }
 
 .form-section > p {
-  text-align: center;
-  margin: 5.8rem 0;
+  justify-self: center;
+  font-size: 1.2rem;
+  /* margin-top: 1.5rem; */
   color: var(--clr-text-secondary);
 }
 
@@ -207,20 +212,19 @@ button:hover {
 /*media querries */
 @media screen and (min-width: 40rem) {
   body {
+    font-size: 30px;
     grid-template-columns: 40% auto;
     grid-template-rows: 1fr;
   }
 
-  /* .form-section__title-container {
-    width: 70%;
-    min-width: 350px;
-    max-width: 1000px;
-    margin-left: 2.5rem;
-    margin-bottom: 0rem;
-    align-self: start;
-  } */
+  .form-section {
+    display: grid;
+  }
 
-  /* .form-section__elements-entries {
+  .form-section__title-container {
+  }
+
+  /* .form-section__elements-entry {
     display: grid;
     grid-template-columns: minmax(12rem, 25rem) minmax(12rem, 25rem);
     justify-content: start;
