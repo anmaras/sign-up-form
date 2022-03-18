@@ -46,80 +46,80 @@
         novalidate
       >
         <p>Let's do this!</p>
-        <div class="form-section__elements-entries">
-          <div class="form-section__elements-entry">
-            <label for="firstname">*FIRST NAME:</label>
-            <input
-              type="text"
-              id="firstname"
-              name="user_firstname"
-              required
-              pattern="[A-Za-z ]+"
-              minlength="2"
-              maxlength="25"
-            />
-            <p>*Please enter your first name</p>
-          </div>
-          <div class="form-section__elements-entry">
-            <label for="lastname">*LAST NAME:</label>
-            <input
-              type="text"
-              id="lastname"
-              name="user_lastname"
-              required
-              pattern="[A-Za-z ]+"
-              minlength="4"
-              maxlength="25"
-            />
-            <p>*Please enter your last name</p>
-          </div>
-          <div class="form-section__elements-entry">
-            <label for="email">*EMAIL:</label>
-            <input type="email" id="email" name="user_email" required />
-            <p>*Please enter your email</p>
-          </div>
-          <div class="form-section__elements-entry">
-            <label for="phone">*PHONE NUMBER:</label>
-            <input
-              type="tel"
-              id="phone"
-              name="user_phone"
-              required
-              minlength="10"
-              maxlength="30"
-              pattern="[0-9]+"
-            />
-            <p>*Please enter your phone number</p>
-          </div>
-          <div class="form-section__elements-entry icon" required>
-            <label for="password">*PASSWORD:</label>
-            <input
-              type="password"
-              id="password"
-              name="user_password"
-              pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-              minlength="8"
-              maxlength="55"
-              required
-            />
-            <p>*Please enter your password</p>
-            <span class="material-icons-outlined"> visibility_off </span>
-          </div>
-          <div class="form-section__elements-entry icon">
-            <label for="pswd-confirm">*CONFIRM PASSWORD:</label>
 
-            <input
-              type="password"
-              id="pswd-confirm"
-              name="user_pswd-confirm"
-              required
-            />
-            <p>*Password do not match</p>
-            <span class="material-icons-outlined confirm">visibility_off</span>
-          </div>
+        <div class="form-section__elements-entry">
+          <label for="firstname">*FIRST NAME:</label>
+          <input
+            type="text"
+            id="firstname"
+            name="user_firstname"
+            required
+            pattern="[A-Za-z ]+"
+            minlength="2"
+            maxlength="25"
+          />
+          <p>*Please enter your first name</p>
         </div>
-        <button type="submit">Create Account</button>
+        <div class="form-section__elements-entry">
+          <label for="lastname">*LAST NAME:</label>
+          <input
+            type="text"
+            id="lastname"
+            name="user_lastname"
+            required
+            pattern="[A-Za-z ]+"
+            minlength="4"
+            maxlength="25"
+          />
+          <p>*Please enter your last name</p>
+        </div>
+        <div class="form-section__elements-entry">
+          <label for="email">*EMAIL:</label>
+          <input type="email" id="email" name="user_email" required />
+          <p>*Please enter your email</p>
+        </div>
+        <div class="form-section__elements-entry">
+          <label for="phone">*PHONE NUMBER:</label>
+          <input
+            type="tel"
+            id="phone"
+            name="user_phone"
+            required
+            minlength="10"
+            maxlength="30"
+            pattern="[0-9]+"
+          />
+          <p>*Please enter your phone number</p>
+        </div>
+        <div class="form-section__elements-entry icon" required>
+          <label for="password">*PASSWORD:</label>
+          <input
+            type="password"
+            id="password"
+            name="user_password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            minlength="8"
+            maxlength="55"
+            required
+          />
+          <p>*Please enter your password</p>
+          <span class="material-icons-outlined"> visibility_off </span>
+        </div>
+        <div class="form-section__elements-entry icon">
+          <label for="pswd-confirm">*CONFIRM PASSWORD:</label>
+
+          <input
+            type="password"
+            id="pswd-confirm"
+            name="user_pswd-confirm"
+            required
+          />
+          <p>*Password do not match</p>
+          <span class="material-icons-outlined confirm">visibility_off</span>
+        </div>
+        <input type="submit" id="submit-button" class="hidden" />
       </form>
+      <label for="submit-button" tabindex="0" id="button">Create Account</label>
       <p>Already have an account? <a href="#">Log in</a></p>
     </section>
   </body>
