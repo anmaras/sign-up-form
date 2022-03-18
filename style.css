@@ -26,9 +26,8 @@
 
 html {
   font-family: var(--ff-primary);
-  font-size: 16px;
   color: var(--clr-text);
-  line-height: 1.5;
+  font-size: 16px;
 }
 
 body {
@@ -40,7 +39,6 @@ body {
 }
 
 .background-section {
-  /* min-height: 15rem; */
   background-color: var(--bg-clr-primary);
 }
 
@@ -82,7 +80,7 @@ body {
 
 .form-section__title-container__text,
 .form-section__title-container__text.subtitle {
-  font-size: 1.2em;
+  font-size: 1.125rem;
   font-weight: normal;
   text-align: justify;
 }
@@ -96,11 +94,11 @@ body {
 
 /*form section  form container*/
 
-form p {
+form > p {
   color: var(--clr-text-secondary);
   font-weight: 800;
-  font-size: 1.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 .form-section__elements {
@@ -111,20 +109,21 @@ form p {
 
 .form-section__elements-entries p {
   color: var(--clr-warning-text);
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: normal;
   margin-top: 0.2rem;
+  margin-bottom: 0.4rem;
   visibility: hidden;
 }
 
 .form-section__elements input,
 .form-section__elements label {
   min-width: 100%;
+  margin-top: 0.1rem;
 }
 
 .form-section__elements input:focus-visible {
   outline: none;
-  /* border: 0px solid var(--inpt-outline-focus); */
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
@@ -132,7 +131,7 @@ form p {
   border: 2px solid var(--clr-inpt-border);
   border-radius: 4px;
   font-size: 1rem;
-  padding: 8px;
+  padding: 0.5rem;
 }
 
 .form-section__elements input.error {
@@ -145,7 +144,8 @@ form p {
 }
 
 .form-section__elements label {
-  font-weight: 500;
+  font-size: 0.9rem;
+  font-weight: bold;
   color: var(--clr-text-secondary);
 }
 
@@ -169,11 +169,11 @@ form p {
 
 button {
   position: relative;
-  top: 13%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, 0);
   padding: 0.8rem 2.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-family: var(--ff-primary);
   font-weight: 500;
   color: var(--clr-button-text);
@@ -195,7 +195,7 @@ button:hover {
 
 .form-section > p {
   text-align: center;
-  margin: 5.5rem 0;
+  margin: 5.8rem 0;
   color: var(--clr-text-secondary);
 }
 
@@ -207,101 +207,47 @@ button:hover {
 /*media querries */
 @media screen and (min-width: 40rem) {
   body {
-    grid-template-columns: 1fr 3fr;
-  }
-  .background-section {
-    grid-column: 1/2;
-    grid-row: 1/3;
-  }
-  .form-section {
-    grid-row: 1/3;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    align-items: center;
-  }
-}
-/* 
-  .background-section {
-    min-height: 100%;
-    flex: 1;
+    grid-template-columns: 40% auto;
+    grid-template-rows: 1fr;
   }
 
-  .background-section__img {
-    position: relative;
-  }
-
-  .background-section__logo-container {
-    position: relative;
-    top: 8%;
-    display: inline-block;
-    text-align: center;
-  }
-
-  .background-section__logo-container__img {
-    height: 7rem;
-    display: inline-block;
-    margin: auto;
-    vertical-align: middle;
-  }
-
-  .background-section__logo-container h2 {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 4rem;
-  }
-
-  .form-section {
-    flex: 3;
-    height: 100%;
-    display: flex;
-    flex-flow: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .form-section__title-container {
+  /* .form-section__title-container {
     width: 70%;
     min-width: 350px;
     max-width: 1000px;
     margin-left: 2.5rem;
     margin-bottom: 0rem;
     align-self: start;
-  }
+  } */
 
-  .form-section__elements {
-    width: 100%;
-    padding: 1rem 2.5rem;
-  }
-
-  .form-section__elements-entries {
+  /* .form-section__elements-entries {
     display: grid;
     grid-template-columns: minmax(12rem, 25rem) minmax(12rem, 25rem);
     justify-content: start;
     column-gap: 5rem;
-  }
+  } */
 
-  .form-section__elements-entry {
+  /* .form-section__elements-entry {
     display: flex;
     flex-flow: column;
     width: 100%;
-  }
+  } */
 
-  button {
+  /* button {
     width: 13rem;
     font-size: 1.1rem;
     margin-left: 2.5rem;
     margin-top: 0;
-  }
+  } */
 
-  .form-section > p {
+  /* .form-section > p {
     text-align: left;
     margin-left: 2.5rem;
     margin-top: 0;
     font-size: 1.2rem;
-  }
+  } */
 
-  .material-icons-outlined {
+  /* .material-icons-outlined {
     position: absolute;
     font-size: 1.3rem;
     color: rgb(90, 90, 90);
@@ -309,4 +255,6 @@ button:hover {
     top: 50%;
     transform: translate(0, -75%);
     cursor: pointer;
-  } */
+  }
+   */
+}
