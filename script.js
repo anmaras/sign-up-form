@@ -32,11 +32,11 @@ userLastName.addEventListener("input", () => {
 });
 
 email.addEventListener("input", () => {
+  inputEmailError();
   if (email.validity.valid) {
     email.classList.remove("error");
     email.nextElementSibling.style.visibility = "hidden";
   }
-  inputEmailError();
 });
 
 phone.addEventListener("input", () => {
