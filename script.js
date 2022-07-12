@@ -1,94 +1,94 @@
-const form = document.querySelector("form");
-const userName = document.getElementById("firstname");
-const userLastName = document.getElementById("lastname");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const password = document.getElementById("password");
-const confirmationPasswordInput = document.getElementById("pswd-confirm");
-const userPasswordIcon = document.querySelector(".material-icons-outlined");
+const form = document.querySelector('form');
+const userName = document.getElementById('firstname');
+const userLastName = document.getElementById('lastname');
+const email = document.getElementById('email');
+const phone = document.getElementById('phone');
+const password = document.getElementById('password');
+const confirmationPasswordInput = document.getElementById('pswd-confirm');
+const userPasswordIcon = document.querySelector('.material-icons-outlined');
 const confirmationPasswordIcon = document.querySelector(
-  ".material-icons-outlined.confirm"
+  '.material-icons-outlined.confirm'
 );
 console.log(userLastName);
 
 /* Inputs Event Listeners */
 
-userName.addEventListener("input", () => {
+userName.addEventListener('input', () => {
   if (userName.validity.valid) {
     userName.value = firstLetterToUpperCase(userName.value); // turn the first letter to upperCase
-    userName.classList.remove("error");
-    userName.nextElementSibling.style.visibility = "hidden";
+    userName.classList.remove('error');
+    userName.nextElementSibling.style.visibility = 'hidden';
   }
   inputUserNameError();
 });
 
-userLastName.addEventListener("input", () => {
+userLastName.addEventListener('input', () => {
   if (userLastName.validity.valid) {
     userLastName.value = firstLetterToUpperCase(userLastName.value);
-    userLastName.classList.remove("error");
-    userLastName.nextElementSibling.style.visibility = "hidden";
+    userLastName.classList.remove('error');
+    userLastName.nextElementSibling.style.visibility = 'hidden';
   }
   inputUserLastNameError();
 });
 
-email.addEventListener("input", () => {
+email.addEventListener('input', () => {
   inputEmailError();
   if (email.validity.valid) {
-    email.classList.remove("error");
-    email.nextElementSibling.style.visibility = "hidden";
+    email.classList.remove('error');
+    email.nextElementSibling.style.visibility = 'hidden';
   }
 });
 
-phone.addEventListener("input", () => {
+phone.addEventListener('input', () => {
   if (phone.validity.valid) {
-    phone.classList.remove("error");
-    phone.nextElementSibling.style.visibility = "hidden";
+    phone.classList.remove('error');
+    phone.nextElementSibling.style.visibility = 'hidden';
   }
 });
 
-password.addEventListener("input", () => {
+password.addEventListener('input', () => {
   if (password.validity.valid) {
-    password.classList.remove("error");
-    password.nextElementSibling.style.visibility = "hidden";
+    password.classList.remove('error');
+    password.nextElementSibling.style.visibility = 'hidden';
   }
 });
 
 /* Form Event Listener Validation*/
 
-form.addEventListener("submit", (e) => {
+form.addEventListener('submit', (e) => {
   if (!userName.validity.valid) {
-    userName.classList.add("error");
-    userName.nextElementSibling.style.visibility = "visible";
+    userName.classList.add('error');
+    userName.nextElementSibling.style.visibility = 'visible';
     showErrorName();
     e.preventDefault();
   }
   if (!userLastName.validity.valid) {
-    userLastName.classList.add("error");
-    userLastName.nextElementSibling.style.visibility = "visible";
+    userLastName.classList.add('error');
+    userLastName.nextElementSibling.style.visibility = 'visible';
     showErrorLastName();
     e.preventDefault();
   }
   if (!email.validity.valid) {
-    email.classList.add("error");
-    email.nextElementSibling.style.visibility = "visible";
+    email.classList.add('error');
+    email.nextElementSibling.style.visibility = 'visible';
     showErrorEmail();
     e.preventDefault();
   }
   if (!phone.validity.valid) {
-    phone.classList.add("error");
-    phone.nextElementSibling.style.visibility = "visible";
+    phone.classList.add('error');
+    phone.nextElementSibling.style.visibility = 'visible';
     showErrorPhone();
     e.preventDefault();
   }
   if (!password.validity.valid) {
-    password.classList.add("error");
-    password.nextElementSibling.style.visibility = "visible";
+    password.classList.add('error');
+    password.nextElementSibling.style.visibility = 'visible';
     showErrorPassword();
     e.preventDefault();
   }
   if (confirmationPasswordInput.value !== password.value) {
-    confirmationPasswordInput.classList.add("error");
-    confirmationPasswordInput.nextElementSibling.style.visibility = "visible";
+    confirmationPasswordInput.classList.add('error');
+    confirmationPasswordInput.nextElementSibling.style.visibility = 'visible';
     showConfirmationError();
     e.preventDefault();
   }
@@ -97,11 +97,11 @@ form.addEventListener("submit", (e) => {
 /*Password Event Listener */
 
 //password
-userPasswordIcon.addEventListener("click", passwordVisibility);
+userPasswordIcon.addEventListener('click', passwordVisibility);
 
 //password confirmation
 confirmationPasswordIcon.addEventListener(
-  "click",
+  'click',
   confirmationPasswordInputVisibility
 );
 
@@ -109,23 +109,23 @@ confirmationPasswordIcon.addEventListener(
 
 function passwordVisibility() {
   //toggle the visibility icon for password input
-  if (userPasswordIcon.textContent.trim() === "visibility_off") {
-    userPasswordIcon.textContent = "visibility";
-    password.type = "text";
+  if (userPasswordIcon.textContent.trim() === 'visibility_off') {
+    userPasswordIcon.textContent = 'visibility';
+    password.type = 'text';
   } else {
-    userPasswordIcon.textContent = "visibility_off";
-    password.type = "password";
+    userPasswordIcon.textContent = 'visibility_off';
+    password.type = 'password';
   }
 }
 
 function confirmationPasswordInputVisibility() {
   //toggle the visibility icon for confirmation input
-  if (confirmationPasswordIcon.textContent.trim() === "visibility_off") {
-    confirmationPasswordIcon.textContent = "visibility";
-    confirmationPasswordInput.type = "text";
+  if (confirmationPasswordIcon.textContent.trim() === 'visibility_off') {
+    confirmationPasswordIcon.textContent = 'visibility';
+    confirmationPasswordInput.type = 'text';
   } else {
-    confirmationPasswordIcon.textContent = "visibility_off";
-    confirmationPasswordInput.type = "password";
+    confirmationPasswordIcon.textContent = 'visibility_off';
+    confirmationPasswordInput.type = 'password';
   }
 }
 
@@ -134,11 +134,11 @@ function confirmationPasswordInputVisibility() {
 function inputUserNameError() {
   if (userName.value.match(/[0-9]/g) || userName.value.length < 2) {
     // if input is number or less than 2 chars
-    userName.nextElementSibling.style.visibility = "visible";
+    userName.nextElementSibling.style.visibility = 'visible';
     showErrorName();
   }
   if (!userName.value) {
-    userName.nextElementSibling.style.visibility = "hidden";
+    userName.nextElementSibling.style.visibility = 'hidden';
   }
 }
 
@@ -146,29 +146,29 @@ function inputUserLastNameError() {
   if (userLastName.value.match(/[0-9]/g) || userLastName.value.length < 4) {
     // if input is number or less than 4 chars
     showErrorLastName();
-    userLastName.nextElementSibling.style.visibility = "visible";
+    userLastName.nextElementSibling.style.visibility = 'visible';
   }
   if (!userLastName.value) {
-    userLastName.nextElementSibling.style.visibility = "hidden";
+    userLastName.nextElementSibling.style.visibility = 'hidden';
   }
 }
 
 function inputEmailError() {
   if (email.value) {
-    email.nextElementSibling.style.visibility = "visible";
-    email.nextElementSibling.textContent = "*example@domain.com";
-  } else email.nextElementSibling.style.visibility = "hidden";
+    email.nextElementSibling.style.visibility = 'visible';
+    email.nextElementSibling.textContent = '*example@domain.com';
+  } else email.nextElementSibling.style.visibility = 'hidden';
 }
 
 /*Input Capital Letter Function */
 
 function firstLetterToUpperCase(string) {
-  if (string.indexOf(" ") >= 0) {
+  if (string.indexOf(' ') >= 0) {
     //check if there is space between characters.
     return string
-      .split(" ")
+      .split(' ')
       .map((text) => text.charAt(0).toUpperCase() + text.slice(1))
-      .join(" ");
+      .join(' ');
     // turns the first letter after space to upperCase
   } else return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -177,31 +177,31 @@ function firstLetterToUpperCase(string) {
 
 function showErrorName() {
   if (userName.validity.valueMissing) {
-    userName.nextElementSibling.textContent = "*Please enter your first name";
+    userName.nextElementSibling.textContent = '*Please enter your first name';
   } else if (userName.validity.patternMismatch) {
     userName.nextElementSibling.textContent =
-      "*Your name should only contain alphabetical characters";
+      '*Your name should only contain alphabetical characters';
   } else if (userName.validity.tooShort)
     userName.nextElementSibling.textContent =
-      "*Your name should contain min 2 and max 25 characters!";
+      '*Your name should contain min 2 and max 25 characters!';
 }
 
 function showErrorLastName() {
   if (userLastName.validity.valueMissing) {
     userLastName.nextElementSibling.textContent =
-      "*Please enter your last name";
+      '*Please enter your last name';
   } else if (userLastName.validity.patternMismatch) {
     userLastName.nextElementSibling.textContent =
-      "*Your last name should only contain alphabetical characters";
+      '*Your last name should only contain alphabetical characters';
   } else if (userLastName.validity.tooShort)
     userLastName.nextElementSibling.textContent =
-      "*Your last name should contain min 4 and max 25 characters!";
+      '*Your last name should contain min 4 and max 25 characters!';
 }
 
 function showErrorEmail() {
   if (email.validity.valueMissing) {
     email.nextElementSibling.textContent =
-      "You need to enter a valid e-mail address.";
+      'You need to enter a valid e-mail address.';
   } else if (email.validity.typeMismatch) {
     email.nextElementSibling.textContent =
       "*Entered value needs to be a valid e-mail address.'";
@@ -211,12 +211,12 @@ function showErrorEmail() {
 function showErrorPhone() {
   if (phone.validity.valueMissing) {
     phone.nextElementSibling.textContent =
-      "You need to enter your phone number.";
+      'You need to enter your phone number.';
   } else if (phone.validity.patternMismatch) {
     phone.nextElementSibling.textContent =
       "*Entered characters needs to be numbers'";
   } else if (phone.validity.tooShort) {
-    phone.nextElementSibling.textContent = "Phone number too short";
+    phone.nextElementSibling.textContent = 'Phone number too short';
   }
 }
 
@@ -225,28 +225,28 @@ function showErrorPassword() {
   const upperCaseLetters = /[A-Z]/g;
   const numbers = /[0-9]/g;
   if (password.validity.valueMissing) {
-    password.nextElementSibling.textContent = "*You need to enter a password.";
+    password.nextElementSibling.textContent = '*You need to enter a password.';
   } else if (!password.value.match(lowerCaseLetters)) {
     password.nextElementSibling.textContent =
-      "*Password must contain at least one lowercase letter.";
+      '*Password must contain at least one lowercase letter.';
   } else if (!password.value.match(upperCaseLetters)) {
     password.nextElementSibling.textContent =
-      "*Password must contain at least one uppercase letter.";
+      '*Password must contain at least one uppercase letter.';
   } else if (!password.value.match(numbers)) {
     password.nextElementSibling.textContent =
-      "*Password must contain at least one number.";
+      '*Password must contain at least one number.';
   } else if (password.validity.tooShort) {
     password.nextElementSibling.textContent =
-      "*Password need to be at least 8 characters";
+      '*Password need to be at least 8 characters';
   }
 }
 
 function showConfirmationError() {
-  if (confirmationPasswordInput.value !== "" && password.value === "") {
+  if (confirmationPasswordInput.value !== '' && password.value === '') {
     confirmationPasswordInput.nextElementSibling.textContent =
-      "*You have not entered any password yet!";
+      '*You have not entered any password yet!';
   } else if (confirmationPasswordInput.value !== password.value) {
     confirmationPasswordInput.nextElementSibling.textContent =
-      "*Password does not match";
+      '*Password does not match';
   }
 }
